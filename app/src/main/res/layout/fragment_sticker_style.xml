@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color10"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_template"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="模板时间"
+                    android:textColor="@color/normal_color"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/range_seekBar"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/range_seekBar" />
+
+                <com.lai.sticker.view.DoubleValueSeekBarView
+                    android:id="@+id/range_seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="28dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_template"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:r2CurrentMaxValue="3"
+                    app:r2CurrentMinValue="0"
+                    app:r2barHeight="2dp"
+                    app:r2circleFillColor="@color/white"
+                    app:r2circleRadius="7dp"
+                    app:r2circleTextColor="@color/black"
+                    app:r2circleTextSize="14sp"
+                    app:r2maxValue="10"
+                    app:r2maxValueStep="1"
+                    app:r2minValue="0"
+                    app:r2minValueStep="1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ll_color">
+
+
+                <com.lai.sticker.view.BeautySeekBar
+                    android:id="@+id/sb_alpha"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="28dp"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_stroke"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_stroke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="透明度"
+                    android:textColor="@color/normal_color"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/sb_alpha"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/sb_alpha" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ll_color">
+
+
+                <CheckBox
+                    android:id="@+id/cb_h"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="镜像横向"
+                    android:textColor="@color/normal_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_v"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="镜像竖直"
+                    android:textColor="@color/normal_color"
+                    app:layout_constraintStart_toEndOf="@id/cb_h"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_isLock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="锁帧"
+                    android:textColor="@color/normal_color"
+                    app:layout_constraintStart_toEndOf="@id/cb_v"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <CheckBox
+                    android:id="@+id/cb_isVisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否显示整体层"
+                    android:textColor="@color/normal_color"
+                    app:layout_constraintStart_toEndOf="@id/cb_isLock"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_isBg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否显示图片层"
+                    android:textColor="@color/normal_color"
+                    app:layout_constraintStart_toStartOf="@+id/cb_h"
+                    app:layout_constraintTop_toBottomOf="@id/cb_h" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
