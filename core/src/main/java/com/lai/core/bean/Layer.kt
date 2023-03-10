@@ -1,20 +1,8 @@
 package com.lai.core.bean
 
-data class Sticker(
-    val id: Int,
-    var filePath: String
-)
-
-data class ContentLayer(
-    val id: Int,
-    var isSelect: Boolean,
-    val arrayList: ArrayList<Sticker>
-)
-
-
-
-
-
+import android.graphics.Canvas
+import android.graphics.RectF
+import android.view.View
 
 
 

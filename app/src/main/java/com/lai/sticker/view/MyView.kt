@@ -4,19 +4,16 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.view.MotionEvent
 import android.view.View
-import androidx.core.graphics.withTranslation
 import com.lai.sticker.R
 
 /**
  * TODO: document your custom view class.
  */
-class RangeView : View {
+class MyView : View {
 
     private var _exampleString: String? = null // TODO: use a default from R.string...
     private var _exampleColor: Int = Color.RED // TODO: use a default from R.color...
@@ -80,26 +77,26 @@ class RangeView : View {
     private fun init(attrs: AttributeSet?, defStyle: Int) {
         // Load attributes
         val a = context.obtainStyledAttributes(
-            attrs, R.styleable.RangeView, defStyle, 0
+            attrs, R.styleable.MyView, defStyle, 0
         )
 
         _exampleString = a.getString(
-            R.styleable.RangeView_exampleString
+            R.styleable.MyView_exampleString
         )
         _exampleColor = a.getColor(
-            R.styleable.RangeView_exampleColor,
+            R.styleable.MyView_exampleColor,
             exampleColor
         )
         // Use getDimensionPixelSize or getDimensionPixelOffset when dealing with
         // values that should fall on pixel boundaries.
         _exampleDimension = a.getDimension(
-            R.styleable.RangeView_exampleDimension,
+            R.styleable.MyView_exampleDimension,
             exampleDimension
         )
 
-        if (a.hasValue(R.styleable.RangeView_exampleDrawable)) {
+        if (a.hasValue(R.styleable.MyView_exampleDrawable)) {
             exampleDrawable = a.getDrawable(
-                R.styleable.RangeView_exampleDrawable
+                R.styleable.MyView_exampleDrawable
             )
             exampleDrawable?.callback = this
         }
@@ -125,15 +122,6 @@ class RangeView : View {
         }
     }
 
-    var canvasRect = Rect()
-    var canvasRect2 = Rect(200,200,400,400)
-
-
-    private fun LOGE(msg: String) {
-        android.util.Log.e("11111", msg)
-    }
-
-
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
@@ -146,10 +134,6 @@ class RangeView : View {
 
         val contentWidth = width - paddingLeft - paddingRight
         val contentHeight = height - paddingTop - paddingBottom
-//        canvas.drawRoundRect(bounds.left, bounds.top, bounds.right, bounds.bottom, mCornerRadius, mCornerRadius, mBgPaint);
-        canvas.save()
-//        val clipBounds = canvas.getClipBounds(canvasRect)
-//        LOGE("rectf ${clipBounds}  ${canvasRect}")
 
         exampleString?.let {
             // Draw the text.
@@ -169,6 +153,5 @@ class RangeView : View {
             )
             it.draw(canvas)
         }
-        canvas.restore()
     }
 }

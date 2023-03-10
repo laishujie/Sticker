@@ -11,6 +11,66 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="296dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.lai.sticker.view.HFrame
+        android:id="@+id/h_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#202023"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button">
+        <com.lai.sticker.view.TimeRulerView
+            android:id="@+id/time_ruler"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.lai.sticker.view.StickerGroup
+            android:id="@+id/controller"
+            app:layout_constraintTop_toBottomOf="@id/time_ruler"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.lai.sticker.view.HFrame>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@id/h_frame"
+        app:layout_constraintBottom_toBottomOf="@id/h_frame"
+        app:layout_constraintStart_toStartOf="@id/h_frame"
+        app:layout_constraintTop_toTopOf="@id/h_frame" />
+    <!-- -->
+
+
+    <!-- <HorizontalScrollView
+      android:layout_width="match_parent"
+      android:layout_height="300dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent">
+
+          <com.lai.sticker.view.TimeRuler
+              android:layout_width="wrap_content"
+              android:layout_height="0dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+  </HorizontalScrollView>-->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

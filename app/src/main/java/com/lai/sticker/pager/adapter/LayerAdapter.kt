@@ -4,8 +4,8 @@ import android.view.View
 import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.lai.core.bean.ContentLayer
 import com.lai.sticker.R
+/*
 
 class LayerAdapter : BaseQuickAdapter<ContentLayer, BaseViewHolder>(R.layout.item_layer),
     View.OnClickListener {
@@ -35,4 +35,4 @@ class LayerAdapter : BaseQuickAdapter<ContentLayer, BaseViewHolder>(R.layout.ite
     override fun onClick(v: View?) {
 
     }
-}
+}*/
